@@ -53,7 +53,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Run Trivy vulnerability scanner
-        uses: aquasecurity/trivy-action@v0.16.0
+        uses: aquasecurity/trivy-action@v0.32.0
         with:
           scan-type: 'fs'
           ignore-unfixed: true
@@ -62,7 +62,7 @@ jobs:
           path: src/ai-service
 
       - name: Scan for secrets
-        uses: gitleaks/gitleaks-action@v2.3.4
+        uses: gitleaks/gitleaks-action@v2.3.9
 
       - name: Lint Dockerfile
         uses: hadolint/hadolint-action@v3.1.0
